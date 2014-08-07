@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Busuu Test</string>
+    <string name="hello">Hello Busuu Test!</string>
+    <string name="action_settings">Settings</string>
+    <string name="landing_text">Welcome to Busuu!</string>
+
+</resources>
