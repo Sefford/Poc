@@ -75,7 +75,7 @@ public class Movie implements Renderable, RepoElement<Long>, Serializable {
 
     @Override
     public int getRenderableId() {
-        return R.layout.listitem_release;
+        return R.layout.listitem_movie;
     }
 
     @Override

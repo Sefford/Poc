@@ -15,10 +15,12 @@ import com.squareup.picasso.Picasso;
  */
 public class MovieRenderer implements Renderer<Movie> {
 
-    private ImageView background;
-    private TextView score;
-    private TextView info;
-    private TextView name;
+    protected ImageView background;
+    protected TextView score;
+    protected TextView info;
+    protected TextView name;
+    // We should inject this dependency to make it perfectly testable
+    protected Picasso picasso;
 
     @Override
     public void mapViews(View view) {
@@ -35,7 +37,8 @@ public class MovieRenderer implements Renderer<Movie> {
 
     @Override
     public void render(Context context, Movie movie, int position, boolean first, boolean last) {
-        Picasso.with(context).load(movie.getPosterPath())
+        picasso  = Picasso.with(context);
+        picasso.load(movie.getPosterPath())
                 .into(background);
         score.setText(Double.toString(movie.getAverage()));
         info.setText(movie.getRelease());
@@ -44,7 +47,7 @@ public class MovieRenderer implements Renderer<Movie> {
 
     @Override
     public int getId() {
-        return R.layout.listitem_release;
+        return R.layout.listitem_movie;
     }
 }
 
